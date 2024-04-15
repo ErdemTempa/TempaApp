@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DS7TkecqG97l09s/izoDHAUSnuDthGn67+34luhR0yo2Zevr+wrOwk6ZmfQQsIjcQnDBguEgFbb6uvDLzYmhFA==",
+  "dgSpecHash": "TGJWduX63/ABCS/WmVQr+VLXeKDWfCHyhEieBKB13zB/KPLXsiDzOyYWgihWI05OuDORr3JvxKfrbHJwodkwQQ==",
   "success": true,
-  "projectFilePath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
+  "projectFilePath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\plugin.ble\\2.1.3\\plugin.ble.2.1.3.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",

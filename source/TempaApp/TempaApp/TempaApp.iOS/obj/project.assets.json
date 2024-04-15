@@ -1917,11 +1917,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
+      "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
       "projectName": "TempaApp.iOS",
-      "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
+      "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\TempaApp.iOS.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\obj\\",
+      "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.iOS\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "fallbackFolders": [
@@ -1942,8 +1942,8 @@
       "frameworks": {
         "xamarinios10": {
           "projectReferences": {
-            "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
-              "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj"
+            "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
+              "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj"
             }
           }
         }

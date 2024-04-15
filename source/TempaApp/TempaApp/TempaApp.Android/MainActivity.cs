@@ -105,6 +105,7 @@ namespace TempaApp.Droid
                 
             });
 
+
             MessagingCenter.Subscribe<BleStopLongRunningMessage>(this, "BleStopLongRunningMessage", message =>
             {
                 var intent = new Intent(this, typeof(BleLongRunningTaskService));

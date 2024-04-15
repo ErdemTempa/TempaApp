@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj": {}
+    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj": {}
   },
   "projects": {
-    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj": {
+    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj",
+        "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj",
         "projectName": "TempaApp.Android",
-        "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj",
+        "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.Android\\TempaApp.Android.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp.Android\\obj\\",
+        "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp.Android\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
         "fallbackFolders": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "monoandroid12.0": {
             "projectReferences": {
-              "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
-                "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj"
+              "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
+                "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj"
               }
             }
           }
@@ -74,14 +74,14 @@
         }
       }
     },
-    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
+    "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj",
+        "projectUniqueName": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj",
         "projectName": "TempaApp",
-        "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj",
+        "projectPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\TempaApp.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\source\\TempaApp\\TempaApp\\TempaApp\\obj\\",
+        "outputPath": "D:\\Projeler\\YazilimProjeleri\\TempaApp\\git\\source\\TempaApp\\TempaApp\\TempaApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
