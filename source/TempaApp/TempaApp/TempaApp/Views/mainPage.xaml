@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TempaApp.ViewModels"
+             xmlns:model="clr-namespace:TempaApp.Models"
+             xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+             x:DataType="viewmodels:mainPageViewModel"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             Title="X-TYPE SMART APP"
+             x:Class="TempaApp.Views.mainPage">
+
+
+    <ContentPage.BindingContext>
+        <viewmodels:mainPageViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="imgConnection" IconImageSource ="{Binding ConnectionIcon}" Command="{Binding CheckBackgroundCommand}"/>
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <!--<StackLayout>
+            <Label Text="{Binding WeightVal}" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Button Text="SetZero"  VerticalOptions="End" Command="{Binding SendSetZeroCommand}"/>
+            <Button Text="SetTare" VerticalOptions="End" Command="{Binding SendSetTareCommand}"/>
+            <Button Text="TotPar" VerticalOptions="End" Command="{Binding SendTotParCommand}"/>
+            <Button Text="Block" VerticalOptions="End" Command="{Binding SendBlockCommand}"/>
+        </StackLayout>-->
+
+        <StackLayout Background="#E1DAD2">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackLayout Grid.Column="0" Grid.Row="0" Margin="0,0,0,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="6*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <StackLayout Grid.Column="0" Grid.Row="0" VerticalOptions="Fill" HorizontalOptions="Fill"  >
+                            <Image Source="LC_Pese_Logo_48.png" Margin="0,32,0,0" VerticalOptions="Center" HorizontalOptions="Center" Scale="1.3"/>
+                            
+                        </StackLayout>
+                        <StackLayout Grid.Column="1" Grid.Row="0" Padding="3" Margin="0" HorizontalOptions="Fill" VerticalOptions="Fill">
+
+
+                            <Grid HorizontalOptions="Fill" VerticalOptions="Fill" Margin="0,15,0,0" >
+                                <Image Margin="0" Source="WeightFrame.png" VerticalOptions="Fill" HorizontalOptions="Fill" Aspect="Fill"/>
+                                
+                                <StackLayout VerticalOptions="Center" HorizontalOptions="Fill" Orientation="Vertical" Spacing="0" >
+                                   
+                                    <StackLayout VerticalOptions="Center" HorizontalOptions="FillAndExpand" Orientation="Horizontal" Margin="0,10,0,0" >
+                                        <Grid HorizontalOptions="Fill">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="7*"/>
+                                                <ColumnDefinition Width="3*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition/>
+                                            </Grid.RowDefinitions>
+                                            <Image Source="{Binding AlarmIcon}" Margin="10,0,0,0" Grid.Column="0" Grid.Row="0" VerticalOptions="Center" HorizontalOptions="Center" Scale="1"  />
+                                            <Label Text="{Binding WeightVal}" VerticalOptions="Center" Grid.Column="1" Grid.Row="0" HorizontalOptions="End" FontFamily="Calibri_Mono_Bold" FontSize="100" TextColor="Black"  />
+                                            <Label Text="{Binding UnitVal}"  Margin="0,0,50,12" VerticalOptions="End" Grid.Column="2" Grid.Row="0" HorizontalOptions="Center" FontFamily="Calibri_Mono_Bold" FontSize="50" TextColor="Black" />
+                                        </Grid>
+
+                                    </StackLayout>
+                                    <Label Text="{Binding InfoVal}" VerticalOptions="Start" HorizontalOptions="Center" FontFamily="HarmonyOS_Medium" FontSize="55" TextColor="#978C87" />
+                                   
+                                </StackLayout>
+                                
+                                <!--<StackLayout VerticalOptions="Center" HorizontalOptions="End">
+                                    <Label Text=" kg" VerticalOptions="End" Margin="0,0,80,30" HorizontalOptions="Center" FontFamily="HarmonyOS_Medium" FontSize="40" TextColor="Black"/>
+                                </StackLayout>-->
+                                
+                            </Grid>
+                            
+
+                        </StackLayout>
+                        <StackLayout Grid.Column="2" Grid.Row="0" VerticalOptions="Fill" HorizontalOptions="Fill" >
+                            <Image Source="tempaLogo_96.png" Margin="-10,50,0,0" VerticalOptions="Center" HorizontalOptions="Center"/>
+                        </StackLayout>
+                    </Grid>
+                </StackLayout>
+                <StackLayout Grid.Column="0" Grid.Row="1" Margin="0,20,0,0" Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="0,0,0,0" >
+                    <ImageButton Source="LoadBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0" Command="{Binding SendLoadCommand}"/>
+                    <ImageButton Source="ZeroBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0">
+                        <!--Command="{Binding SendTotParCommand}">-->
+                        <ImageButton.Behaviors>
+                            <xct:EventToCommandBehavior 
+                                EventName="Pressed"
+                                Command="{Binding TotParKeyPressedCommand}"/>
+                            <xct:EventToCommandBehavior
+                                EventName="Released"
+                                Command="{Binding TotParKeyReleasedCommand}"/>
+                        </ImageButton.Behaviors>
+                    </ImageButton>
+                    <ImageButton Source="MenuBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0" Command="{Binding SendMenuCommand}"/>
+                    <ImageButton Source="BackBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,4,0" Command="{Binding SendLeftArrowCommand}"/>
+                    <ImageButton Source="NextBtn.png" BackgroundColor="#FFE1DAD2" Margin="4,0,0,0" Command="{Binding SendUpArrowCommand}"/>
+                    <ImageButton Source="OkBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0" Command="{Binding SendOkCommand}"/>
+                    <ImageButton Source="BlockBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0" Command="{Binding SendBlockCommand}"/>
+                    <ImageButton Source="UnloadBtn.png" BackgroundColor="#FFE1DAD2" Margin="0,0,0,0" Command="{Binding SendUnloadCommand}"/>
+                </StackLayout>
+            </Grid>
+            
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

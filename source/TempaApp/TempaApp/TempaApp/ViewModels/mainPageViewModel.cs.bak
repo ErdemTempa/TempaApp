@@ -1,0 +1,172 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using MvvmHelpers;
+using MvvmHelpers.Commands;
+using TempaApp.Models;
+using Xamarin.CommunityToolkit.Helpers;
+using Xamarin.Essentials;
+using Xamarin.Forms;
+
+namespace TempaApp.ViewModels
+{
+    public class mainPageViewModel : BaseViewModel
+    {
+        private string weightVal;
+        public string WeightVal
+        {
+            get { return weightVal; }
+            set { SetProperty(ref weightVal, value); }
+        }
+
+        private string connectionIcon;
+        public string ConnectionIcon
+        {
+            get => connectionIcon;
+            set { SetProperty(ref connectionIcon, value); }
+        }
+
+
+        public AsyncCommand<object> SendSetZeroCommand { get; }
+        public AsyncCommand<object> SendSetTareCommand { get; }
+        public AsyncCommand<object> SendTotParCommand { get; }
+        public AsyncCommand<object> SendBlockCommand { get; }
+
+
+
+        public mainPageViewModel()
+        {
+            WeightVal = "0";
+            Device.StartTimer(System.TimeSpan.FromSeconds(0.1), mainPageUpdateUI);
+            SendSetTareCommand = new AsyncCommand<object>(SetTare);
+            SendSetZeroCommand = new AsyncCommand<object>(SetZero);
+            SendTotParCommand = new AsyncCommand<object>(SetTotPar);
+            SendBlockCommand = new AsyncCommand<object>(SetBlock);
+            // CheckIndicator();
+        }
+
+        private Task SetBlock(object arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private Task SetTotPar(object arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private async Task SetZero(object arg)
+        {
+            await App.MyBle.SetZeroAsync();
+
+        }
+
+        private Task SetTare(object arg)
+        {
+            throw new NotImplementedException();
+        }
+
+        private bool mainPageUpdateUI()
+        {
+            MainThread.BeginInvokeOnMainThread(async () =>
+            {
+                //int i;
+                //i = int.Parse(this.WeightVal);
+                //i++;
+                //this.WeightVal = i.ToString();
+                if (App.MyBle.Connection)
+                {
+                    this.ConnectionIcon = "connect_256.png";
+                }
+                else
+                {
+                    this.ConnectionIcon = "disconnect_256.png";
+                }
+                if (App.MyBle.rxData.Count > 0)
+                {
+                    this.WeightVal = Encoding.ASCII.GetString(App.MyBle.rxData.GetRange(0, App.MyBle.rxData.Count).ToArray());
+                    //this.WeightVal = App.MyBle.rxData.GetRange(0, App.MyBle.rxData.Count)
+                    App.MyBle.rxData.Clear();
+                }
+                await Task.Delay(2);
+            });            
+            return true;
+        }
+
+
+        //async Task CheckIndicator()
+        //{
+        //    var indicator = await Database.GetCurrentIndicatorAsync();
+
+        //    if (indicator == null)
+        //    {
+        //        var bleDevices = App.MyBleDevice.GetPairedDevices();
+
+        //        if ((bleDevices == null) || bleDevices.Count == 0)
+        //        {
+        //            //var message = LocalizationResourceManager.Current.GetValue("No Mikrosub dive computer found in your current paired device list!") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("Please follow the steps below") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("1- Go to connectivity settings from your dive computer") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("2- Make sure airplane mode is OFF") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("3- Open pairing settings") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("4- Turn on your mobile device bluetooth ON") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("5- Scan bluetooth devices") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("6- Find your dive computer and pair with your device");
+        //            //LocalizationResourceManager.Current.GetValue("7- Restart this app again");
+        //            //await AppShell.Current.DisplayAlert(LocalizationResourceManager.Current.GetValue("Warning!"), message,
+        //            //LocalizationResourceManager.Current.GetValue("Ok"));
+        //            //var closer = DependencyService.Get<ICloseApplication>();
+        //            //closer?.closeApplication();
+
+        //        }
+        //        else if (bleDevices.Count > 1)
+        //        {
+        //            //var message = LocalizationResourceManager.Current.GetValue("More than one paired Mikrosub dive computer in your mobile device list!") + "\r\n" +
+        //            //    LocalizationResourceManager.Current.GetValue("Please leave only one device in the paired device list and restart this app again");
+        //            //await AppShell.Current.DisplayAlert(LocalizationResourceManager.Current.GetValue("Warning!"), message,
+        //            //LocalizationResourceManager.Current.GetValue("Ok"));
+        //            //var closer = DependencyService.Get<ICloseApplication>();
+        //            //closer?.closeApplication();
+        //        }
+        //        else
+        //        {
+        //            var newIndıcator = new Indicator();
+        //            newIndıcator.IsCurrentIndicator = true;
+        //            newIndıcator.Name = bleDevices[0].Name;
+        //            newIndıcator.Guid = bleDevices[0].Device.Id.ToString();
+        //            newIndıcator.SoftwareVersion = null;
+
+        //            await Database.SaveIndicatorAsync(newIndıcator);
+
+
+        //                if (App.IsBleBackgroundAlive)
+        //            {
+        //                App.StopIndicatorBackgroudCommunication();
+        //                while (App.IsBleBackgroundAlive)
+        //                {
+        //                    await Task.Delay(500);
+        //                }
+
+        //            }
+        //            App.StartIndicatorBackgroudCommunication();
+        //        }
+        //        //var message = LocalizationResourceManager.Current.GetValue("New firmware will be downloaded on your dive computer") + "\r\n" +
+        //        //    LocalizationResourceManager.Current.GetValue("This will take time") + LocalizationResourceManager.Current.GetValue("Until that moment you can use your dive computer") + "\r\n" +
+        //        //    LocalizationResourceManager.Current.GetValue("Keep your mobile device bluetooth is ON") + "\r\n" +
+        //        //    LocalizationResourceManager.Current.GetValue("Please, allow this application run on background") + "\r\n" +
+        //        //    LocalizationResourceManager.Current.GetValue("You will get notification after download completed") + "\r\n" +
+        //        //    LocalizationResourceManager.Current.GetValue("Do you want to download and update your device with selected firmware?");
+        //        //if (await AppShell.Current.DisplayAlert(LocalizationResourceManager.Current.GetValue("Warning!"), message,
+        //        //LocalizationResourceManager.Current.GetValue("Ok"),
+        //        //LocalizationResourceManager.Current.GetValue("Cancel")))
+        //        //{
+
+        //        //}
+        //    }
+        //}
+    }
+
+
+   
+}

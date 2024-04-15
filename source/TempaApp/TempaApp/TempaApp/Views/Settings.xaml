@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodels="clr-namespace:TempaApp.ViewModels"
+             xmlns:model="clr-namespace:TempaApp.Models"
+             xmlns:mvvm="clr-namespace:MvvmHelpers;assembly=MvvmHelpers"
+             x:DataType="viewmodels:SettingsViewModel"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit" 
+             Title="X-TYPE SMART / Settings"
+             x:Class="TempaApp.Views.Settings">
+
+    <ContentPage.BindingContext>
+        <viewmodels:SettingsViewModel/>
+    </ContentPage.BindingContext>
+    
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem x:Name="imgConnection" IconImageSource ="{Binding ConnectionIcon}"/>-->
+    </ContentPage.ToolbarItems>
+    
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="This page is for autorized person only!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
